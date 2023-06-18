@@ -4,43 +4,141 @@
 
 }
 
+
 body{
+    background-color: rgb(78, 76, 76);
+   
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(61, 59, 59);
-    min-height: 100vh;
 }
 
 .container{
     position: relative;
-    width: 370px;
-    height: 450px;
-    background-color: rgb(27, 26, 26);
-    border-radius: 50px 5px;
-
+    width: 300px;
+    height: 400px;
+    background-color: rgb(33, 29, 29);
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    
+    overflow: hidden;
+    
 }
-
 .container::before{
     content: '';
-    position:absolute;
-    top:-50%;
+    position: absolute;
+    top: -50%;
     left: -50%;
-    width: 370px;
-    height: 450px;
+    width: 300px;
+    height: 400px;
     background: linear-gradient(60deg,transparent,#45f3ff,#45f3ff);
+    
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
 
 }
+
 .container::after{
-    content: "";
+    content: '';
     position: absolute;
-    top:-50%;
+    top: -50%;
     left: -50%;
-    height: 370px;
-    width: 450px;
-    background: linear-gradient(60deg,transparent,#d9138a,#d9138a);
+    width: 300px;
+    height: 400px;
+    background: linear-gradient(60deg,transparent,#db42ce,#ec4fe5);
+
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+
+@keyframes animate {
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}
+form{
+    position: absolute;
+    inset: 2px;
+    background-color: rgb(54, 52, 52);
+    border-radius:5px  40px;
+    z-index: 10;
+    padding: 30px 30px;
+    display: flex;
+    flex-direction: column;
+
+}
+form h1{
+    color: #45f3ff;
+    font-size: 35px;
+    font-weight: 500px;
+    text-align: center;
+
+}
+.inputBox{
+    position: relative;
+    width: 250px;
+    margin-top:30px;
+
+}
+
+.inputBox input{
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #23242a;
+
+}
+
+input[type ='submit']{
+    font-size: 20px;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    background-color: #45f3ff;
+    padding: 10px;
+    margin: 35px;
+    font-weight: 600;
+}
+input[type='submit']:active{
+    background:linear-gradient(90deg,#45f3ff,#db42ce);
+    opacity: 0.8;
+}
+
+.inputBox span{
+    position: absolute;
+    left:0;
+    padding: 20px 10px 10px;
+    font-size: 1em;
+    color:#8f8f8f;
+    pointer-events: none;
+    transition: .3s;
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span{
+    color:#45f3ff;
+    transform: translate(-10px,-30px);
+    font-size: 0.75em;
+    
+
+}
+
+.inputBox i{
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left:0;
+    bottom: 0;;
+    background-color: #45f3ff;
 }
