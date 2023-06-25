@@ -95,7 +95,10 @@ form h1{
     background: transparent;
     border: none;
     outline: none;
+    
+    font-size: 1.25em;
     color: #23242a;
+
 
 }
 
@@ -130,15 +133,33 @@ input[type='submit']:active{
     color:#45f3ff;
     transform: translate(-10px,-30px);
     font-size: 0.75em;
+
     
 
 }
+.inputBox input:valid{
+    color:#db42ce;
+    font-weight: 600;
+    
+}
+
 
 .inputBox i{
     position: absolute;
     width: 100%;
     height: 2px;
     left:0;
-    bottom: 0;;
-    background-color: #45f3ff;
+    bottom: 0;
+    background: #45f3ff;
 }
+
+
+.links{
+    position: absolute;
+    bottom: 10px;
+    right: 5px;;
+}
+.links a{
+    color: #45f3ff;
+}
+
