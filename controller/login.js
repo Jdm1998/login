@@ -10,7 +10,8 @@ module.exports.signin = async function(req,res){
             console.log(authenticateUser);
      if(authenticateUser){
         res.cookie('id',authenticateUser.Username);
-        res.render('./profile',{user:authenticateUser});
+        res.redirect('/profile');
+        return;
      }
      else
      res.render('login');
