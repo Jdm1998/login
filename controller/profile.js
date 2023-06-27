@@ -16,6 +16,6 @@ module.exports.profile = async function (req,res){
     }
     else
 
-    res.render('profile',{user:user});
+    res.render('profile');
 
 }
